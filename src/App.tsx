@@ -1,8 +1,12 @@
+import Homepage from "./pages/Homepage";
+
 function App() {
   return (
-    <h1 className="font-semibold text-2xl">
-      Pokedex App - Created by Riyadh Firdaus Ahmad
-    </h1>
+    <main>
+      <div className="relative isolate dark:bg-gray-900">
+        <Homepage />
+      </div>
+    </main>
   );
 }
 

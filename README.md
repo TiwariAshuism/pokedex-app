@@ -23,7 +23,7 @@ This Pokédex App was made in ReactJS + TypeScript + Shadcn UI + Vite. Initially
 
 ## 📌 Links
 
-- [Deploy]()
+- [Deploy](https://pokedex-app-react.vercel.app/)
 - [Vite](https://vitejs.dev/)
 - [ReactJS](https://react.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)

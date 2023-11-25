@@ -40,9 +40,9 @@ const PokemonModal = ({
           Read more
         </Button>
       </DialogTrigger>
-      <DialogContent className="lg:max-w-screen-lg overflow-y-scroll max-h-screen sm:max-w-xl md:max-w-2xl bg-rose-600/80 border-none !rounded-tl-[20rem] !rounded-br-3xl !rounded-tr-3xl">
+      <DialogContent className="lg:max-w-screen-lg overflow-y-scroll md:overflow-y-hidden max-h-screen sm:max-w-xl md:max-w-2xl bg-rose-600/80 border-none !rounded-tl-[20rem] !rounded-br-3xl !rounded-tr-3xl">
         <div className="flex">
-          <div className="w-full grid grid-cols-1 lg:grid-cols-2 overflow-y-visible">
+          <div className="w-full grid grid-cols-1 md:grid-cols-2">
             <div className="w-full flex flex-col items-center">
               <img
                 src={imgUrl}
@@ -70,7 +70,7 @@ const PokemonModal = ({
                 </div>
               </div>
             </div>
-            <div className="flex-col ml-12 flex-1">
+            <div className="flex-col text-center md:text-start flex-1 mt-6 md:mt-0">
               <h6 className="text-3xl mt-12n font-bold italic text-white">
                 {pokemonData && formatPokemonId(pokemonData?.id)}
               </h6>
@@ -80,10 +80,10 @@ const PokemonModal = ({
               >
                 {pokemonData?.name}
               </h1>
-              <p className="md:w-96 md:text-base text-sm font-normal text-white">
+              <p className="md:w-96 md:text-base inline text-sm font-normal text-white">
                 {descriptionPokemon}
               </p>
-              <div className="flex space-x-2 items-center mt-3">
+              <div className="flex space-x-2 items-center justify-center md:justify-start mt-3">
                 <div className="mr-2 text-xl font-semibold text-white">
                   Type:
                 </div>

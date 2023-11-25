@@ -77,6 +77,8 @@ const PokemonCard = ({ pokemon }: PokemonCardProps) => {
         <img
           onLoad={() => setSkeleton(false)}
           src={imgUrl}
+          width={300}
+          height={300}
           alt={pokemon.name}
           className="w-[300px] drop-shadow-2xl"
         />

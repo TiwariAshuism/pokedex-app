@@ -71,7 +71,7 @@ const Hero = ({ pokemonData, setPokemonData, pokemonName }: HeroProps) => {
           className="absolute hidden md:block md:w-[80px] xl:w-[120px] z-10 -rotate-[40deg] opacity-[0.15] top-[4rem] left-[40vw] transform-gpu overflow-hidden"
           aria-hidden="true"
         >
-          <img src={lightning} alt="Image Lightning" />
+          <img src={lightning} width={120} height={340} alt="Image Lightning" />
         </div>
         {/* content */}
         <div className="text-white text-center md:text-start">
@@ -108,12 +108,16 @@ const Hero = ({ pokemonData, setPokemonData, pokemonName }: HeroProps) => {
           >
             <img
               src={pokeball}
+              width={300}
+              height={300}
               alt="Image Pokeball"
               className="drop-shadow-xl"
             />
           </div>
           <img
             src={imgUrl}
+            width={600}
+            height={600}
             alt={pokemonData?.name}
             className="animate-pulse w-[600px] drop-shadow-2xl"
           />

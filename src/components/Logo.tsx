@@ -9,7 +9,13 @@ function Logo() {
           ratio={16 / 9}
           className="flex items-center justify-center"
         >
-          <img src={LogoImage} alt="logo" className="dark:filter dark:invert" />
+          <img
+            src={LogoImage}
+            alt="logo"
+            width={144}
+            height={60}
+            className="dark:filter dark:invert"
+          />
         </AspectRatio>
       </div>
     </a>

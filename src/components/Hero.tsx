@@ -74,17 +74,17 @@ const Hero = ({ pokemonData, setPokemonData, pokemonName }: HeroProps) => {
           <img src={lightning} alt="Image Lightning" />
         </div>
         {/* content */}
-        <div className="text-white">
-          <h6 className="text-3xl mt-12n font-bold italic">
+        <div className="text-white text-center md:text-start">
+          <h6 className="text-xl md:text-3xl mt-12n font-bold italic">
             {pokemonData && formatPokemonId(pokemonData?.id)}
           </h6>
-          <div className="flex space-x-2 mt-3">
+          <div className="flex justify-center md:justify-start space-x-2 mt-3">
             {pokemonData?.types.map(({ type }) => (
               <PokemonType key={type.name} type={type.name} tabIndex={false} />
             ))}
           </div>
           <h1
-            className="font-bold md:text-7xl my-4 text-3xl tracking-wider text-rose-600 drop-shadow-[5px_4px_2px_rgba(255,255,255,0.75)] mb-8 capitalize"
+            className="font-bold md:text-7xl my-4 mt-8 md:my-4 text-5xl tracking-wider text-rose-600 drop-shadow-[5px_4px_2px_rgba(255,255,255,0.75)] mb-4 md:mb-8 capitalize"
             style={{ fontFamily: "PokemonSolid" }}
           >
             {pokemonName}

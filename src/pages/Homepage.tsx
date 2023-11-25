@@ -6,6 +6,7 @@ import SearchBar from "@/components/SearchBar";
 import Pokedex from "@/components/Pokedex";
 import wave from "@/assets/wave.svg";
 import { fetchPokemonList } from "@/api/fetchPokemonList";
+import { Footer } from "@/components/Footer";
 
 const Homepage = () => {
   const [pokemonData, setPokemonData] = useState<Pokemon>();
@@ -27,35 +28,39 @@ const Homepage = () => {
   }, [pokemonList]);
 
   return (
-    <div className="bg-slate-900">
-      <Header />
-      <Hero
-        pokemonData={pokemonData}
-        setPokemonData={setPokemonData}
-        pokemonName={"charizard"}
-      />
-      <SearchBar
-        setPokemonList={setPokemonList}
-        pokemonAmount={pokemonAmount}
-        setError={setError}
-        setLoading={setLoading}
-      />
-      <div className="relative -mt-[105px] pb-[105px] px-7">
-        <div className="h-24 w-full mx-auto absolute left-0 hidden md:block">
-          <img src={wave} alt="Wave" />
-        </div>
-        <Pokedex
+    <>
+      {" "}
+      <div className="bg-slate-900">
+        <Header />
+        <Hero
+          pokemonData={pokemonData}
           setPokemonData={setPokemonData}
-          pokemonList={pokemonList}
+          pokemonName={"pikachu"}
+        />
+        <SearchBar
           setPokemonList={setPokemonList}
           pokemonAmount={pokemonAmount}
-          setPokemonAmount={setPokemonAmount}
-          error={error}
-          loading={loading}
+          setError={setError}
           setLoading={setLoading}
         />
+        <div className="relative -mt-[105px] pb-[105px] px-7">
+          <div className="h-24 w-full mx-auto absolute left-0 hidden md:block">
+            <img src={wave} alt="Wave" />
+          </div>
+          <Pokedex
+            setPokemonData={setPokemonData}
+            pokemonList={pokemonList}
+            setPokemonList={setPokemonList}
+            pokemonAmount={pokemonAmount}
+            setPokemonAmount={setPokemonAmount}
+            error={error}
+            loading={loading}
+            setLoading={setLoading}
+          />
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 

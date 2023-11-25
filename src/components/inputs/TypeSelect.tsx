@@ -56,7 +56,7 @@ export function TypeSelect(props: SearchFilterProps) {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[300px] justify-between capitalize font-semibold"
+          className="w-[350px] justify-between capitalize font-semibold"
         >
           {value ? (
             <div className="flex items-center">
@@ -76,7 +76,7 @@ export function TypeSelect(props: SearchFilterProps) {
           <SortAscIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[300px] p-0">
+      <PopoverContent className="w-[350px] p-0">
         <Command>
           <CommandInput placeholder="Search type..." className="h-9" />
           <CommandEmpty>No type found.</CommandEmpty>

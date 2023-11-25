@@ -17,7 +17,7 @@ export const PokemonType = (props: PokemonTypeProps) => {
   return name && colorName && icon ? (
     <Badge
       className={cn(
-        `py-2 px-3 border-2 border-white/60 text-base font-normal capitalize`,
+        `py-1 px-3 border-2 border-white/60 text-sm md:text-base font-normal capitalize`,
         colorName
       )}
     >

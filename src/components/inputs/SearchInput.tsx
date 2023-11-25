@@ -34,6 +34,7 @@ export function SearchInput(props: SearchInputProps) {
       onChange={(e) => setInputValue(e.target.value)}
       placeholder="Search Pokemon"
       required
+      className="w-full"
     />
   );
 }

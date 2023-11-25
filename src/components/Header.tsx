@@ -1,10 +1,14 @@
 import Logo from "./Logo";
+import { SocialMedia } from "./SocialMedia";
 
 const Header = () => {
   return (
     <header className="sticky z-50 bg-yellow-500 dark:bg-gray-900">
-      <nav className="flex flex-col sm:flex-row items-center justify-center py-3 bg-yellow-500 dark:bg-gray-900 max-w-7xl mx-auto">
+      <nav className="flex md:flex-row flex-col items-center space-y-3 justify-between py-3 bg-yellow-500 dark:bg-gray-900 max-w-7xl mx-auto">
         <Logo />
+        <div className="hidden md:block">
+          <SocialMedia />
+        </div>
       </nav>
     </header>
   );

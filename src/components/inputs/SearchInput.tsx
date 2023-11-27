@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Pokemon } from "@/types/Pokemon";
 import { debounce } from "lodash";
 import { Search } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 type SearchInputProps = {
   setPokemonList: (data: Pokemon[]) => void;

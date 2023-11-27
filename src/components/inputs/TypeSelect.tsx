@@ -25,28 +25,29 @@ type SearchFilterProps = {
   setPokemonList: (data: Pokemon[]) => void;
   pokemonAmount: number;
   setLoading: (value: boolean) => void;
+  selectValue: string;
+  setSelectValue: (value: string) => void;
 };
 
 export function TypeSelect(props: SearchFilterProps) {
   const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState("");
 
   React.useEffect(() => {
-    if (value) {
+    if (props.selectValue) {
       (async () => {
         props.setLoading(true);
         props.setPokemonList(
-          await fetchPokemonByType(value, props.pokemonAmount)
+          await fetchPokemonByType(props.selectValue, props.pokemonAmount)
         );
         props.setLoading(false);
       })();
     }
-  }, [props.pokemonAmount, value]);
+  }, [props.pokemonAmount, props.selectValue]);
 
   const iconPokemon = customReplace(
-    pokemonTypes.find((type) => type.name === value)?.icon || "",
+    pokemonTypes.find((type) => type.name === props.selectValue)?.icon || "",
     "white",
-    pokemonTypes.find((type) => type.name === value)?.color || ""
+    pokemonTypes.find((type) => type.name === props.selectValue)?.color || ""
   );
 
   return (
@@ -56,9 +57,9 @@ export function TypeSelect(props: SearchFilterProps) {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[350px] justify-between capitalize font-semibold"
+          className="w-[350px] justify-between capitalize font-semibold focus-visible:ring-offset-0 focus-visible:ring-0 border-rose-600/30"
         >
-          {value ? (
+          {props.selectValue ? (
             <div className="flex items-center">
               <div
                 dangerouslySetInnerHTML={{
@@ -67,7 +68,10 @@ export function TypeSelect(props: SearchFilterProps) {
                 className="mr-2"
               />
               <div>
-                {pokemonTypes.find((type) => type.name === value)?.name}
+                {
+                  pokemonTypes.find((type) => type.name === props.selectValue)
+                    ?.name
+                }
               </div>
             </div>
           ) : (
@@ -92,7 +96,9 @@ export function TypeSelect(props: SearchFilterProps) {
                   key={type.name}
                   value={type.name}
                   onSelect={(currentValue: any) => {
-                    setValue(currentValue === value ? "" : currentValue);
+                    props.setSelectValue(
+                      currentValue === props.selectValue ? "" : currentValue
+                    );
                     setOpen(false);
                   }}
                   className="capitalize font-semibold"
@@ -105,7 +111,9 @@ export function TypeSelect(props: SearchFilterProps) {
                   <CheckCheckIcon
                     className={cn(
                       "ml-auto h-4 w-4",
-                      value === type.name ? "opacity-100" : "opacity-0"
+                      props.selectValue === type.name
+                        ? "opacity-100"
+                        : "opacity-0"
                     )}
                   />
                 </CommandItem>

@@ -71,7 +71,7 @@ const PokemonCard = ({ pokemon }: PokemonCardProps) => {
       <div className="flex justify-center -mt-32">
         {skeleton && (
           <div className="flex p-5 items-center">
-            <Skeleton className="h-[300px] w-[300px] !rounded-full bg-rose-900" />
+            <Skeleton className="h-[300px] w-[300px] absolute !rounded-full bg-rose-900/30" />
           </div>
         )}
         <img

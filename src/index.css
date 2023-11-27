@@ -23,24 +23,24 @@ body {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: rgba(23,179,8, .5);
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 5px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #ef4444;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(23,179,8, .5);
+  background: rgba(23,179,8, .1);
 }
  
 @layer base {

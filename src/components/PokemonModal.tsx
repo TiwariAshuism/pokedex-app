@@ -40,8 +40,8 @@ const PokemonModal = ({
           Read more
         </Button>
       </DialogTrigger>
-      <DialogContent className="lg:max-w-screen-lg overflow-y-scroll md:overflow-y-hidden max-h-screen sm:max-w-xl md:max-w-2xl bg-rose-600/80 border-none !rounded-tl-[20rem] !rounded-br-3xl !rounded-tr-3xl">
-        <div className="flex">
+      <DialogContent className=" sm:max-w-xl md:max-w-2xl bg-rose-600/80 border-none !rounded-tl-[20rem] !rounded-br-3xl !rounded-tr-3xl">
+        <div className="flex lg:max-w-screen-lg overflow-y-auto md:overflow-y-hidden max-h-screen">
           <div className="w-full grid grid-cols-1 md:grid-cols-2">
             <div className="w-full flex flex-col items-center">
               <img
